@@ -12,6 +12,8 @@ public class LanguageController : ControllerBase
     public IActionResult Get()
     {
         var language = LanguageService.Instance.GetLanguages();
-        return Ok(new GetLanguageModel.Response { DefaultLanguage = language.DefaultLanguage, Languages = language.Languages });
+        var response = Ok(new GetLanguageModel.Response { DefaultLanguage = language.DefaultLanguage, Languages = language.Languages });
+        MonitoringService.Log.Debug("Returning response: {Response}", response);
+        return response; 
     }
 }

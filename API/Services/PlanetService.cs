@@ -1,3 +1,5 @@
+using Serilog;
+
 namespace API.Services;
 
 public class PlanetService
@@ -11,22 +13,27 @@ public class PlanetService
     
     public PlanetResponse GetPlanet()
     {
-        var planets = new[]
+        using (var activity = MonitoringService.ActivitySource.StartActivity())
         {
-            "Mercury",
-            "Venus",
-            "Earth",
-            "Mars",
-            "Jupiter",
-            "Saturn",
-            "Uranus",
-            "Neptune"
-        };
 
-        var index = new Random(DateTime.Now.Millisecond).Next(1, planets.Length+1);
-        return new PlanetResponse
-        {
-            Planet = planets[index]
-        };
+            var planets = new[]
+            {
+                "Mercury",
+                "Venus",
+                "Earth",
+                "Mars",
+                "Jupiter",
+                "Saturn",
+                "Uranus",
+                "Neptune"
+            };
+
+            var index = new Random(DateTime.Now.Millisecond).Next(0, planets.Length);
+            MonitoringService.Log.Debug($"Chose planet at index {index}");
+            return new PlanetResponse
+            {
+                Planet = planets[index]
+            };
+        }
     }
 }

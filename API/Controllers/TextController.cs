@@ -26,6 +26,7 @@ public class TextController : ControllerBase
         }
         catch (Exception e)
         {
+            MonitoringService.Log.Error("Failed {ErrorMessage}", e.Message, e);
             return StatusCode(500, "An error occurred");
         }
     }

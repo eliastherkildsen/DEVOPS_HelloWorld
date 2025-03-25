@@ -1,11 +1,16 @@
 ﻿
 Microsoft Visual Studio Solution File, Format Version 12.00
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "API", "API\API.csproj", "{F8C656A2-9439-477E-938D-CE2A22C890F7}"
+	ProjectSection(ProjectDependencies) = postProject
+		{5DE0832F-C160-4B09-9FA4-6EC9DD17FC21} = {5DE0832F-C160-4B09-9FA4-6EC9DD17FC21}
+	EndProjectSection
 EndProject
 Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Root", "Root", "{5C74A372-CBED-41CF-BA05-B7A54711958A}"
 	ProjectSection(SolutionItems) = preProject
 		compose.yaml = compose.yaml
 	EndProjectSection
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Monitoring", "Monitoring\Monitoring.csproj", "{5DE0832F-C160-4B09-9FA4-6EC9DD17FC21}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
@@ -17,5 +22,9 @@ Global
 		{F8C656A2-9439-477E-938D-CE2A22C890F7}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{F8C656A2-9439-477E-938D-CE2A22C890F7}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{F8C656A2-9439-477E-938D-CE2A22C890F7}.Release|Any CPU.Build.0 = Release|Any CPU
+		{5DE0832F-C160-4B09-9FA4-6EC9DD17FC21}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{5DE0832F-C160-4B09-9FA4-6EC9DD17FC21}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{5DE0832F-C160-4B09-9FA4-6EC9DD17FC21}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{5DE0832F-C160-4B09-9FA4-6EC9DD17FC21}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 EndGlobal
